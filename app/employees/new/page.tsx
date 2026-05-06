@@ -28,8 +28,12 @@ export default function NewEmployeePage() {
 
       if (error) {
         alert(`讀取分院失敗：${error.message}`);
+        console.error("讀取分院失敗：", error);
         return;
       }
+
+      alert(`讀到 ${data?.length || 0} 筆分院`);
+      console.log("分院資料：", data);
 
       setBranches(data || []);
     };
